@@ -10,7 +10,8 @@
 @endphp
 
 <x-dynamic-component :component="$getFieldWrapperView()" :field="$field">
-    <div {{ $attributes->grid($getColumns())->class(['auto-cols-fr', 'gap-5']) }}>
+    <x-filament::grid :default="$getColumns('default')" :sm="$getColumns('sm')" :md="$getColumns('md')" :lg="$getColumns('lg')" :xl="$getColumns('xl')"
+        :two-xl="$getColumns('2xl')" is-grid @class(['gap-5'])>
         @foreach ($getOptions() as $value => $label)
             @php
                 $shouldOptionBeDisabled = $isDisabled || $isOptionDisabled($value, $label);
@@ -18,9 +19,9 @@
 
             <label class="flex cursor-pointer gap-x-3">
                 <input @disabled($shouldOptionBeDisabled) id="{{ $id }}-{{ $value }}"
-                @if (! $isMultiple)
-                    name="{{ $id }}"
-                @endif
+                   @if (! $isMultiple)
+                       name="{{ $id }}"
+                   @endif
                     type="{{  $isMultiple ? 'checkbox' : 'radio' }}"
                     value="{{ $value }}" wire:loading.attr="disabled"
                     {{ $applyStateBindingModifiers('wire:model') }}="{{ $statePath }}"
@@ -31,7 +32,7 @@
                     $iconPosition = $getIconPosition();
                     $alignment = $getAlignment();
                     $direction = $getDirection();
-                    $gap = $getOptionsGap();
+                    $gap = $getGap();
                     $padding = $getPadding();
                     $color = $getColor();
                     $icon = $getIcon($value);
@@ -107,5 +108,5 @@
                 </div>
             </label>
         @endforeach
-    </div>
+    </x-filament::grid>
 </x-dynamic-component>
