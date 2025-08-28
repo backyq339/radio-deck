@@ -2,6 +2,18 @@
 
 All notable changes to `radio-deck` will be documented in this file.
 
+## v1.4 - 2025-08-28
+
+### What's Changed
+
+* Reverted back to the commit id : c5083ce by @shovann-notebrains in https://github.com/199ocero/radio-deck/pull/37
+
+### New Contributors
+
+* @shovann-notebrains made their first contribution in https://github.com/199ocero/radio-deck/pull/37
+
+**Full Changelog**: https://github.com/199ocero/radio-deck/compare/v1.3...v1.4
+
 ## v1.2.10 - 2025-02-27
 
 ### What's Changed
