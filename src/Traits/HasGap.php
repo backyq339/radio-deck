@@ -8,10 +8,20 @@ trait HasGap
 {
     protected string|Closure|null $gap = null;
 
-    public function gap(string|Closure|null $gap): static
+    public function cardGap(string|Closure|null $gap): static
     {
         $this->gap = $gap;
 
+        return $this;
+    }
+    
+    // Override Filament's gap method to maintain compatibility
+    public function gap(Closure|string|bool|null $gap = true): static
+    {
+        if (is_string($gap) || is_null($gap) || $gap instanceof Closure) {
+            $this->gap = $gap;
+        }
+        
         return $this;
     }
 

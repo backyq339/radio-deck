@@ -11,6 +11,13 @@
 
 Turn filament default radio button into a selectable card with icons, title and description.
 
+## Requirements
+
+- PHP 8.2+
+- Laravel 11.28+
+- Filament 4.0+
+- Tailwind CSS 4.0+
+
 ## Installation
 
 You can install the package via composer:
@@ -22,7 +29,7 @@ composer require jaocero/radio-deck
 To adhere to Filament's theming approach, you'll be required to employ a personalized theme in order to utilize this plugin.
 
 > **Custom Theme Installation**
-> [Filament Docs](https://filamentphp.com/docs/3.x/panels/themes#creating-a-custom-theme)
+> [Filament Docs](https://filamentphp.com/docs/4.x/panels/themes#creating-a-custom-theme)
 
 Add the plugin's views to your `tailwind.config.js` file.
 
@@ -32,6 +39,8 @@ content: [
     './vendor/jaocero/radio-deck/resources/views/**/*.blade.php',
 ]
 ```
+
+> **Note for Tailwind CSS 4.0**: This plugin is compatible with Tailwind CSS 4.0. Make sure to use the new Tailwind CSS 4.0 syntax with `@import "tailwindcss"` in your CSS file.
 
 ## Usage
 
